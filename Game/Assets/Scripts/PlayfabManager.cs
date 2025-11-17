@@ -20,6 +20,11 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
         StartCoroutine(Connect());
     }
 
+    public override void OnJoinedLobby()
+    {
+        PhotonNetwork.LoadLevel("Lobby");
+    }
+
     private IEnumerator Connect()
     {
         // Name Server에서 Master Server로 넘어가는 중...
@@ -33,5 +38,26 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
         // 특정 로비를 생성하여 진입하는 함수
         PhotonNetwork.JoinLobby();
+    }
+
+    public void Login()
+    {
+        var request = new LoginWithEmailAddressRequest
+        { 
+            Email = addressInputField.text,
+            Password = passwordInputField.text,
+        };
+
+        PlayFabClientAPI.LoginWithEmailAddress
+        (
+            request,
+            Success,
+            Failure
+        );
+    }
+
+    public void Failure(PlayFabError playFabError)
+    {
+        PanelManager.Instance.Load(Panel.Error, playFabError.GenerateErrorReport());
     }
 }
