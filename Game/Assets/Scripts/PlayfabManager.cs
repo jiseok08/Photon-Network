@@ -56,6 +56,12 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
         );
     }
 
+    public void Subscribe()
+    {
+        PanelManager.Instance.Load(Panel.Subscribe, null);
+    }
+
+
     public void Failure(PlayFabError playFabError)
     {
         PanelManager.Instance.Load(Panel.Error, playFabError.GenerateErrorReport());

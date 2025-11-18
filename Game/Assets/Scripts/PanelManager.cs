@@ -3,7 +3,8 @@ using UnityEngine;
 
 public enum Panel
 { 
-    Error
+    Error,
+    Subscribe
 }
 
 public class PanelManager : MonoBehaviour
@@ -41,6 +42,8 @@ public class PanelManager : MonoBehaviour
         else
         {
             clone = dictionry[panel];
+
+            clone.SetActive(true);
         }
     }
 }
