@@ -43,7 +43,7 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
     public void Login()
     {
         var request = new LoginWithEmailAddressRequest
-        { 
+        {
             Email = addressInputField.text,
             Password = passwordInputField.text,
         };
@@ -61,9 +61,9 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
         PanelManager.Instance.Load(Panel.Subscribe, null);
     }
 
-
     public void Failure(PlayFabError playFabError)
     {
         PanelManager.Instance.Load(Panel.Error, playFabError.GenerateErrorReport());
     }
+
 }

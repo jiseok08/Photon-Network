@@ -13,9 +13,9 @@ public class SubscribePanel : MonoBehaviour
     {
         var request = new RegisterPlayFabUserRequest
         {
-            Email = addressInputField.text,
-            Password = passwordInputField.text,
             Username = nameInputField.text,
+            Email = addressInputField.text,
+            Password = passwordInputField.text
         };
 
         PlayFabClientAPI.RegisterPlayFabUser
@@ -28,7 +28,7 @@ public class SubscribePanel : MonoBehaviour
 
     public void Success(RegisterPlayFabUserResult registerPlayFabUserResult)
     {
-        Debug.Log(registerPlayFabUserResult.Username);
+        gameObject.SetActive(false);
     }
 
     public void Failure(PlayFabError playFabError)
