@@ -33,6 +33,9 @@ public class SubscribePanel : MonoBehaviour
 
     public void Failure(PlayFabError playFabError)
     {
-        PanelManager.Instance.Load(Panel.Error, playFabError.GenerateErrorReport());
+        var report = playFabError.GenerateErrorReport();
+        var lines = report.Split("\n");
+
+        PanelManager.Instance.Load(Panel.Error, $"{lines[2]}\n{lines[3]}");
     }
 }

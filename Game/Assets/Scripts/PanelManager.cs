@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Panel
 { 
@@ -46,6 +47,11 @@ public class PanelManager : MonoBehaviour
             clone = dictionry[panel];
 
             clone.SetActive(true);
+        }
+
+        if (clone.GetComponent<ErrorPanel>() == true)
+        {
+            clone.GetComponent<ErrorPanel>().SetText(message);
         }
     }
 }
