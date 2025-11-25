@@ -3,7 +3,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RoomView : MonoBehaviour
+public class RoomView : MonoBehaviourPunCallbacks
 {
     [SerializeField] Text roomText;
 
@@ -12,6 +12,11 @@ public class RoomView : MonoBehaviour
     public void OnConnectRoom()
     {
         PhotonNetwork.JoinRoom(titleText);
+    }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        PanelManager.Instance.Load(Panel.Error, message);
     }
 
     public void UpdateRoomInformation(RoomInfo roomInfo)
