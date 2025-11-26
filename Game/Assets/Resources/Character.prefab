@@ -198,16 +198,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3855495745255769789}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6162195368937675244}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3237804171744916339}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2663678009840414018}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5421284456563003666}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8410384075897908464}
   m_SourcePrefab: {fileID: 100100000, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
 --- !u!4 &6070823833987848117 stripped
 Transform:
@@ -219,56 +219,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
   m_PrefabInstance: {fileID: 6031832149243424862}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &3855495745255769789
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6878182661993680143}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.08
-  m_Height: 0.3
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.15, z: 0}
---- !u!54 &6162195368937675244
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6878182661993680143}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &3237804171744916339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +258,44 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &5421284456563003666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878182661993680143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776667de60f589545870a58bd9c03744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remoteCamera: {fileID: 1315070620463974076}
+  characterController: {fileID: 0}
+  speed: 5
+  direction: {x: 0, y: 0, z: 0}
+--- !u!143 &8410384075897908464
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878182661993680143}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 0.3
+  m_Radius: 0.075
+  m_SlopeLimit: 45
+  m_StepOffset: 0.1
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.15, z: -0.0075}
