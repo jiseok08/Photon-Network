@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1315070620463974076}
   - component: {fileID: 3258843797036461261}
   - component: {fileID: 5047182360781878470}
+  - component: {fileID: 5392157692236896518}
+  - component: {fileID: 1050428968760693392}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -137,6 +139,35 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &5392157692236896518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186974801539113725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc82751f2bbb1dd46925202f1bf9a09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: {fileID: 1050428968760693392}
+  maximunAngle: 65
+  minimumAngle: -65
+--- !u!114 &1050428968760693392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186974801539113725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5366ff79329ae468797bf7f974a2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 150
+  axis: 0
 --- !u!1001 &6031832149243424862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +239,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8410384075897908464}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1870686301915229872}
   m_SourcePrefab: {fileID: 100100000, guid: 8fabde35ec215e04f8d0a17775c1713c, type: 3}
 --- !u!4 &6070823833987848117 stripped
 Transform:
@@ -270,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776667de60f589545870a58bd9c03744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotation: {fileID: 1870686301915229872}
   remoteCamera: {fileID: 1315070620463974076}
   characterController: {fileID: 0}
   speed: 5
@@ -299,3 +334,17 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.15, z: -0.0075}
+--- !u!114 &1870686301915229872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878182661993680143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5366ff79329ae468797bf7f974a2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 250
+  axis: 0

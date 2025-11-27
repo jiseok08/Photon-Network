@@ -3,6 +3,7 @@ using Photon.Pun;
 
 public class Character : MonoBehaviourPun
 {
+    [SerializeField] Rotation rotation;
     [SerializeField] Camera remoteCamera;
     [SerializeField] CharacterController characterController;
 
@@ -11,6 +12,7 @@ public class Character : MonoBehaviourPun
 
     private void Awake()
     {
+        rotation = GetComponent<Rotation>();
         characterController = GetComponent<CharacterController>();
     }
 
@@ -26,6 +28,8 @@ public class Character : MonoBehaviourPun
             Control();
 
             Move();
+
+            rotation.RotateY();
         }
     }
 
@@ -40,7 +44,7 @@ public class Character : MonoBehaviourPun
 
     public void Move()
     {
-        characterController.Move(direction * speed * Time.deltaTime);
+        characterController.Move(characterController.transform.TransformDirection(direction) * speed * Time.deltaTime);
     }
 
     public void DisableCamera()
