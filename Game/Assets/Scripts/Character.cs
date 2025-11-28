@@ -1,8 +1,10 @@
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.InputSystem.LowLevel;
 
 public class Character : MonoBehaviourPun
 {
+    [SerializeField] Mouse mouse;
     [SerializeField] Rotation rotation;
     [SerializeField] Camera remoteCamera;
     [SerializeField] CharacterController characterController;
@@ -12,12 +14,15 @@ public class Character : MonoBehaviourPun
 
     private void Awake()
     {
+        mouse = GetComponent<Mouse>();
         rotation = GetComponent<Rotation>();
         characterController = GetComponent<CharacterController>();
     }
 
     private void Start()
     {
+        mouse.SetMouse(false);
+
         DisableCamera();
     }
 
