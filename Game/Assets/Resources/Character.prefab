@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776667de60f589545870a58bd9c03744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouse: {fileID: 0}
   rotation: {fileID: 0}
   remoteCamera: {fileID: 1315070620463974076}
   characterController: {fileID: 0}
