@@ -40,8 +40,8 @@ public class Character : MonoBehaviourPun
 
     public void Control()
     {
-        direction.x += Input.GetAxisRaw("Horizontal");
-        direction.z += Input.GetAxisRaw("Vertical");
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.z = Input.GetAxisRaw("Vertical");
 
         // direction 방향을 단위 백터로 설정합니다.
         direction.Normalize();

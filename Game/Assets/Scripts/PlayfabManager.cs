@@ -13,11 +13,18 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
     public void Success(LoginResult loginResult)
     {
+        PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(), Success, Failure);
+
         PhotonNetwork.AutomaticallySyncScene = false;
 
         PhotonNetwork.GameVersion = "1.0f";
 
         StartCoroutine(Connect());
+    }
+
+    public void Success(GetAccountInfoResult getAccountInfoResult)
+    {
+        PhotonNetwork.LocalPlayer.NickName = getAccountInfoResult.AccountInfo?.Username;
     }
 
     public override void OnJoinedLobby()
