@@ -1,5 +1,6 @@
 using Photon.Pun;
 using Photon.Realtime;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,17 @@ public class RoomView : MonoBehaviourPunCallbacks
     [SerializeField] Text roomText;
 
     [SerializeField] string titleText;
+
+    [SerializeField] RoomInfo roomInfo;
+
+    [SerializeField] Button button;
+
+    [SerializeField] event System.Action OnEntered;
+
+    private void Start()
+    {
+        OnEntered += UpdateRoomStatus;
+    }
 
     public void OnConnectRoom()
     {
@@ -21,8 +33,29 @@ public class RoomView : MonoBehaviourPunCallbacks
 
     public void UpdateRoomInformation(RoomInfo roomInfo)
     {
+        this.roomInfo = roomInfo;
+
         titleText = roomInfo.Name;
 
-        roomText.text = roomInfo.Name + " ( " + roomInfo.PlayerCount + " / " + roomInfo.MaxPlayers + " )"; 
+        roomText.text = roomInfo.Name + " ( " + roomInfo.PlayerCount + " / " + roomInfo.MaxPlayers + " )";
+
+        OnEntered?.Invoke();
+    }
+
+    public void UpdateRoomStatus()
+    {
+        if (roomInfo.IsOpen)
+        {
+            button.interactable = true;
+        }
+        else
+        {
+            button.interactable = false;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        OnEntered -= UpdateRoomStatus;
     }
 }
